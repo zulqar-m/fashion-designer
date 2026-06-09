@@ -26,11 +26,14 @@ export default function About() {
             <div className="border-b-4 border-amber-200 pb-24 mb-24">
               <div className="flex flex-col md:flex-row gap-12 items-center">
                 <div className="flex-1">
-                  <img 
-                    src="/images/profile.png" 
-                    alt="Suparna Sachan" 
-                    className="w-56 h-56 rounded-full object-cover mx-auto md:mx-0 shadow-lg"
-                  />
+                  <div className="w-56 h-56 rounded-full object-cover mx-auto md:mx-0 shadow-lg overflow-hidden">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img 
+                      src="/images/profile.png" 
+                      alt="Suparna Sachan" 
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
                 </div>
                 <div className="flex-1">
                   <h2 className="text-4xl font-light text-gray-900 mb-2 tracking-tight">
@@ -209,7 +212,7 @@ export default function About() {
             {/* Call to Action */}
             <div className="bg-gradient-to-r from-amber-50 to-orange-50 border-2 border-amber-200 p-12 text-center hover:shadow-lg transition duration-300">
               <h3 className="text-2xl font-light text-gray-900 mb-4 tracking-tight">
-                Let's Collaborate
+                Let&apos;s Collaborate
               </h3>
               <p className="text-gray-600 mb-8 font-light leading-relaxed">
                 Ready to discuss your next project

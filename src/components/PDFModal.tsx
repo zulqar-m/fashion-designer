@@ -1,7 +1,6 @@
 'use client';
 
 import { motion, AnimatePresence } from 'framer-motion';
-import { useState } from 'react';
 
 interface PDFModalProps {
   isOpen: boolean;
@@ -11,7 +10,6 @@ interface PDFModalProps {
 }
 
 export default function PDFModal({ isOpen, pdfUrl, title, onClose }: PDFModalProps) {
-  const [scale, setScale] = useState(1);
 
   return (
     <AnimatePresence>

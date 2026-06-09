@@ -69,7 +69,7 @@ export default function Home() {
         {/* Call to Action */}
         <section className="py-24 px-4">
           <div className="max-w-3xl mx-auto text-center bg-gray-50 border border-gray-200 p-12 hover:border-gray-400 transition duration-300 hover:shadow-md">
-            <h2 className="text-3xl font-light text-gray-900 mb-6 tracking-tight">Let's Work Together</h2>
+            <h2 className="text-3xl font-light text-gray-900 mb-6 tracking-tight">Let&apos;s Work Together</h2>
             <p className="text-lg text-gray-600 mb-10 font-light leading-relaxed">
               Discuss your next collection or brand collaboration
             </p>

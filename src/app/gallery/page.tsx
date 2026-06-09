@@ -88,6 +88,7 @@ export default function Gallery() {
                     <div className="relative w-full h-56 bg-gradient-to-br from-gray-100 to-gray-50 overflow-hidden flex items-center justify-center group">
                       {collection.imageUrl ? (
                         <>
+                          {/* eslint-disable-next-line @next/next/no-img-element */}
                           <img
                             src={collection.imageUrl}
                             alt={collection.title}

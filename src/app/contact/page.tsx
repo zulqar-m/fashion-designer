@@ -15,7 +15,7 @@ export default function Contact() {
               Collaboration
             </h1>
             <p className="text-lg text-gray-600 font-light">
-              Let's discuss your next project
+              Let&apos;s discuss your next project
             </p>
           </div>
         </section>
