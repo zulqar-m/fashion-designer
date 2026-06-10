@@ -70,13 +70,22 @@ export default function Contact() {
                       Follow
                     </h3>
                     <div className="flex gap-4">
-                      {['Instagram', 'LinkedIn', 'Pinterest'].map((platform, i) => (
+                      {['Behance'].map((platform, i) => (
                         <a
                           key={i}
-                          href="#"
-                          className="text-gray-600 font-light hover:text-gray-900 transition"
+                          href="https://www.behance.net/suparnasachan1"
+                          className="text-gray-400 font-light transition duration-300 hover:text-cyan-300 relative group"
+                          style={{
+                            textShadow: '0 0 1px #212c2e, 0 0 20px #000000, 0 0 30px #06b6d4',
+                          }}
                         >
                           {platform}
+                          <span 
+                            className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-cyan-400 to-blue-400 group-hover:w-full transition-all duration-300"
+                            style={{
+                              boxShadow: '0 0 1px #06b6d4, 0 0 20px #000000',
+                            }}
+                          ></span>
                         </a>
                       ))}
                     </div>
