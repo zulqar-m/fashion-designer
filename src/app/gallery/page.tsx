@@ -11,14 +11,14 @@ const collections = [
     id: 1,
     title: 'KTRN',
     description: 'Rebel threads,timeless roots',
-    pdfUrl: 'https://drive.google.com/file/d/1bbiOJkYRdb6hXPYw-x24TmwaVpLir1aH/view?usp=drivesdk',
+    pdfUrl: '/pdfs/KTRN.pdf',
     imageUrl: '/images/krtn.png',
   },
     {
     id: 2,
     title: 'THE LINEBREAKERS',
     description: 'When every blazer becomes a canvas of disruption',
-    pdfUrl: 'https://drive.google.com/file/d/1awyMh0i3ZvxnJ5tF8IQorZoW1qfx8Sut/view?usp=drivesdk',
+    pdfUrl: '/pdfs/THE LINEBREAKERS.pdf',
     imageUrl: '/images/line-breakers.png',
   },
     {
@@ -62,12 +62,13 @@ export default function Gallery() {
       <Navigation />
       <main className="bg-white">
         {/* Hero Section */}
-        <section className="py-24 px-4 bg-gradient-to-b from-gray-50 to-white border-b border-gray-200">
-          <div className="max-w-6xl mx-auto text-center">
-            <h1 className="text-5xl md:text-6xl font-light text-gray-900 mb-4 tracking-tight">
+        <section className="py-10 px-4 relative min-h-[25vh] flex items-center" style={{backgroundImage: 'url(/homeImages/Screenshot%202026-06-11%20at%203.01.28%20AM.png)', backgroundSize: 'cover', backgroundPosition: 'center'}}>
+          <div className="absolute inset-0 bg-black/45"></div>
+          <div className="max-w-6xl mx-auto text-center w-full relative z-10">
+            <h1 className="text-4xl md:text-5xl font-light text-white mb-2 tracking-tight">
               Collections
             </h1>
-            <p className="text-lg text-gray-600 font-light">
+            <p className="text-base text-gray-100 font-light">
               Explore carefully curated fashion collections
             </p>
           </div>

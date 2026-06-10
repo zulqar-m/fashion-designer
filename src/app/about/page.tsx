@@ -8,12 +8,13 @@ export default function About() {
       <Navigation />
       <main className="bg-white">
         {/* Hero Section */}
-        <section className="py-24 px-4 bg-gradient-to-b from-amber-50 to-white border-b-4 border-amber-200">
-          <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-5xl md:text-6xl font-light text-gray-900 mb-4 tracking-tight">
+        <section className="py-10 px-4 relative min-h-[25vh] flex items-center" style={{backgroundImage: 'url(/homeImages/Screenshot%202026-06-11%20at%203.01.37%20AM.png)', backgroundSize: 'cover', backgroundPosition: 'center'}}>
+          <div className="absolute inset-0 bg-black/45"></div>
+          <div className="max-w-4xl mx-auto text-center w-full relative z-10">
+            <h1 className="text-4xl md:text-5xl font-light text-white mb-2 tracking-tight">
               About
             </h1>
-            <p className="text-lg text-amber-600 font-light">
+            <p className="text-base text-gray-100 font-light">
               The story behind the designs
             </p>
           </div>

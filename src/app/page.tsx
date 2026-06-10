@@ -12,24 +12,25 @@ export default function Home() {
       <Navigation />
       <main className="bg-white">
         {/* Hero Section */}
-        <section className="min-h-[85vh] flex items-center justify-center px-4 py-20 bg-gradient-to-b from-gray-50 to-white">
-          <div className="text-center max-w-3xl mx-auto">
-            <h1 className="text-5xl md:text-6xl font-light mb-6 text-gray-900 tracking-tight">
+        <section className="min-h-[85vh] flex items-center justify-center px-4 py-20 relative" style={{backgroundImage: 'url(/homeImages/Screenshot%202026-06-11%20at%203.01.01%20AM.png)', backgroundSize: 'cover', backgroundPosition: 'center'}}>
+          <div className="absolute inset-0 bg-black/40"></div>
+          <div className="text-center max-w-3xl mx-auto relative z-10">
+            <h1 className="text-5xl md:text-6xl font-light mb-6 text-white tracking-tight">
               Fashion Design Portfolio
             </h1>
-            <p className="text-lg md:text-xl text-gray-600 mb-12 font-light leading-relaxed">
+            <p className="text-lg md:text-xl text-gray-100 mb-12 font-light leading-relaxed">
               Elegant collections and premium brand collaborations
             </p>
             <div className="flex gap-6 justify-center flex-wrap">
               <Link
                 href="/gallery"
-                className="px-8 py-3 bg-gray-900 text-white font-light hover:bg-gray-800 transition duration-200 border border-gray-900 hover:shadow-lg"
+                className="px-8 py-3 bg-white text-gray-900 font-light hover:bg-gray-100 transition duration-200 border border-white hover:shadow-lg"
               >
                 View Gallery
               </Link>
               <Link
                 href="/contact"
-                className="px-8 py-3 border border-gray-900 text-gray-900 font-light hover:bg-gray-50 transition duration-200 hover:shadow-md"
+                className="px-8 py-3 border border-white text-white font-light hover:bg-white/10 transition duration-200 hover:shadow-md"
               >
                 Collaborate
               </Link>
