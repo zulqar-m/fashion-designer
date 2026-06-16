@@ -178,7 +178,6 @@ export default function About() {
                   {[
                     { label: 'GPA', value: '8.45' },
                     { label: 'Minor', value: 'Fashion Communication Design' },
-                    { label: 'Thesis', value: 'Product design & UX optimization across technology companies' },
                   ].map((item) => (
                     <div key={item.label}>
                       <p className="text-[10px] tracking-[0.2em] uppercase text-[#8A8278] mb-2" style={{ fontFamily: 'var(--font-geist-mono, monospace)' }}>

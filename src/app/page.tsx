@@ -44,12 +44,12 @@ export default function Home() {
           <div className="relative z-10 flex flex-col justify-end h-full min-h-[100svh] px-6 md:px-14 pb-14 md:pb-16 max-w-screen-xl mx-auto">
 
             {/* Eyebrow */}
-            <p
+            {/* <p
               className="text-xs tracking-[0.3em] uppercase text-white/60 mb-5"
               style={{ fontFamily: 'var(--font-geist-mono, monospace)' }}
             >
               Portfolio · Fashion Design
-            </p>
+            </p> */}
 
             {/* Main display headline — spans columns */}
             <h1
@@ -96,27 +96,26 @@ export default function Home() {
         </section>
 
         {/* ── CATEGORY STRIP ── */}
-        <section className="bg-[#0A0A0A] py-0">
+        {/* <section className="bg-[#0A0A0A] py-0">
           <div className="max-w-screen-xl mx-auto grid md:grid-cols-3 divide-x divide-white/10">
             {[
-              { label: 'Collections', sub: 'Seasonal & editorial work', href: '/gallery' },
-              { label: 'Brands', sub: 'Collaborations & partnerships', href: '/gallery' },
-              { label: 'Process', sub: 'Behind every piece', href: '/contact' },
+              { label: '', sub: '', href: '' },
+              // { label: 'Brands', sub: 'Collaborations & partnerships', href: '/gallery' },
+              // { label: 'Process', sub: 'Behind every piece', href: '/contact' },
             ].map((cat) => (
-              <Link
+              <div
                 key={cat.label}
-                href={cat.href}
+                // href={cat.href}
                 className="group flex items-center justify-between px-10 py-8 hover:bg-white/5 transition-colors duration-200"
               >
                 <div>
                   <p className="text-white font-light text-lg tracking-tight">{cat.label}</p>
                   <p className="text-white/40 text-xs tracking-wider mt-1">{cat.sub}</p>
                 </div>
-                <span className="text-white/30 group-hover:text-white/80 transition-colors text-xl">→</span>
-              </Link>
+              </div>
             ))}
           </div>
-        </section>
+        </section> */}
 
         {/* ── SELECTED WORK TEASER ── */}
         <section className="py-24 px-6 md:px-14 max-w-screen-xl mx-auto">
