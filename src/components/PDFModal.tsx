@@ -10,7 +10,6 @@ interface PDFModalProps {
 }
 
 export default function PDFModal({ isOpen, pdfUrl, title, onClose }: PDFModalProps) {
-
   return (
     <AnimatePresence>
       {isOpen && (
@@ -20,31 +19,61 @@ export default function PDFModal({ isOpen, pdfUrl, title, onClose }: PDFModalPro
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
+            transition={{ duration: 0.25 }}
             onClick={onClose}
-            className="fixed inset-0 bg-black/50 z-40"
+            className="fixed inset-0 bg-[#0A0A0A]/70 z-40 backdrop-blur-sm"
           />
 
           {/* Modal */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            exit={{ opacity: 0, scale: 0.95 }}
-            className="fixed inset-0 z-50 flex items-center justify-center p-2"
+            initial={{ opacity: 0, y: 24 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: 24 }}
+            transition={{ duration: 0.3, ease: 'easeOut' }}
+            className="fixed inset-0 z-50 flex items-center justify-center p-3 md:p-6"
           >
-            <div className="bg-white shadow-2xl w-[98vw] h-[95vh] flex flex-col">
+            <div className="bg-[#F8F6F2] w-[98vw] h-[95vh] flex flex-col shadow-2xl">
+
               {/* Header */}
-              <div className="flex items-center justify-between px-8 py-6 border-b border-gray-200 flex-shrink-0">
-                <h2 className="text-3xl font-light text-gray-900 tracking-tight">{title}</h2>
+              <div className="flex items-center justify-between px-6 md:px-10 py-5 border-b border-[#D4C9B8] flex-shrink-0">
+                <div className="flex items-center gap-5">
+                  <p
+                    className="text-[10px] tracking-[0.3em] uppercase text-[#8A8278] hidden sm:block"
+                    style={{ fontFamily: 'var(--font-geist-mono, monospace)' }}
+                  >
+                    Collection
+                  </p>
+                  <div className="hidden sm:block w-[1px] h-4 bg-[#D4C9B8]" />
+                  <h2
+                    className="font-light text-[#0A0A0A] tracking-tight"
+                    style={{ fontSize: 'clamp(1rem, 2vw, 1.4rem)' }}
+                  >
+                    {title}
+                  </h2>
+                </div>
+
                 <button
                   onClick={onClose}
-                  className="text-gray-500 hover:text-gray-900 text-4xl font-light transition w-10 h-10 flex items-center justify-center"
+                  aria-label="Close"
+                  className="flex items-center gap-2 text-[#8A8278] hover:text-[#0A0A0A] transition-colors duration-200 group"
                 >
-                  ×
+                  <span className="text-xs tracking-[0.2em] uppercase hidden sm:block" style={{ fontFamily: 'var(--font-geist-mono, monospace)' }}>
+                    Close
+                  </span>
+                  {/* Animated × using two lines */}
+                  <span className="relative w-5 h-5">
+                    <span className="absolute inset-0 flex items-center justify-center">
+                      <span className="block w-4 h-[1px] bg-current rotate-45" />
+                    </span>
+                    <span className="absolute inset-0 flex items-center justify-center">
+                      <span className="block w-4 h-[1px] bg-current -rotate-45" />
+                    </span>
+                  </span>
                 </button>
               </div>
 
               {/* PDF Viewer */}
-              <div className="flex-1 overflow-auto bg-gray-50">
+              <div className="flex-1 overflow-auto bg-[#E8E4DE]">
                 <embed
                   src={pdfUrl}
                   type="application/pdf"
@@ -53,26 +82,30 @@ export default function PDFModal({ isOpen, pdfUrl, title, onClose }: PDFModalPro
                 />
               </div>
 
-              {/* Footer Actions */}
-              <div className="flex items-center justify-between px-8 py-5 border-t border-gray-200 bg-white flex-shrink-0">
-                <div className="text-sm text-gray-600 font-light">
-                  PDF Collection
-                </div>
+              {/* Footer */}
+              <div className="flex items-center justify-between px-6 md:px-10 py-4 border-t border-[#D4C9B8] bg-[#F8F6F2] flex-shrink-0">
+                <p
+                  className="text-[10px] tracking-[0.25em] uppercase text-[#8A8278]"
+                  style={{ fontFamily: 'var(--font-geist-mono, monospace)' }}
+                >
+                  PDF · {title}
+                </p>
+
                 <div className="flex gap-3">
-                  <a
-                    href={pdfUrl}
-                    download
-                    className="px-6 py-2 bg-gray-900 text-white font-light hover:bg-gray-800 transition duration-200 text-sm"
-                  >
-                    Download
-                  </a>
                   <a
                     href={pdfUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="px-6 py-2 border border-gray-900 text-gray-900 font-light hover:bg-gray-50 transition duration-200 text-sm"
+                    className="px-5 py-2 border border-[#D4C9B8] text-[#8A8278] text-xs font-light tracking-[0.15em] uppercase hover:border-[#0A0A0A] hover:text-[#0A0A0A] transition-colors duration-200"
                   >
-                    Open in New Tab
+                    Open In New Tab
+                  </a>
+                  <a
+                    href={pdfUrl}
+                    download
+                    className="px-5 py-2 bg-[#0A0A0A] text-white text-xs font-light tracking-[0.15em] uppercase hover:bg-[#8A8278] transition-colors duration-300"
+                  >
+                    Download
                   </a>
                 </div>
               </div>

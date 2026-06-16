@@ -2,230 +2,269 @@
 
 import Navigation from '@/components/Navigation';
 
+const experiences = [
+  { role: 'Menswear Assistant Designer', company: 'HOUSE OF ALAMS', location: 'Delhi NCR', period: 'Jan – Jun 2026' },
+  { role: 'Menswear Assistant Designer', company: 'NAMUNJII', location: 'Ahmedabad, Gujarat', period: 'Aug – Dec 2025' },
+  { role: 'Graduation Project Internship', company: 'THE INDIAN GARAGE CO', location: 'Bangalore, Karnataka', period: 'Jan – May 2025' },
+  { role: 'Fashion Designer', company: 'UNITED COLORS OF BENETTON', location: 'Gurgaon, Haryana', period: 'Jun – Jul 2024' },
+  { role: 'Fashion Styling Expert', company: 'PANTALOONS STYLE-EXPERTS', location: 'Bangalore', period: 'Sep 2023' },
+  { role: 'Craft Cluster Documentation', company: 'PERIYAR NEGAMAM CRAFT CLUSTER', location: 'Pollachi, Tamil Nadu', period: 'May 2023' },
+  { role: 'Fashion Stylist', company: 'RAW MANGO', location: 'Festive Collection & SUZEGAD', period: 'Nov 2023' },
+];
+
+const expertise = [
+  { title: 'Specializations', items: ['Menswear Design', 'Kidswear', 'Evening Wear', 'Ready-to-Wear', 'Traditional Crafts'] },
+  { title: 'Skills', items: ['Pattern Making', 'Styling & Consultation', 'Craft Documentation', 'Design Illustration', 'Fashion Coordination'] },
+  { title: 'Brands Worked With', items: ['Raw Mango', 'Pantaloons', 'Benetton', 'Namunjii', 'House of Alams'] },
+  { title: 'Key Areas', items: ['Sustainable Fashion', 'Artisan Collaboration', 'Cultural Heritage', 'Contemporary Design', 'Team Leadership'] },
+];
+
 export default function About() {
   return (
     <>
       <Navigation />
-      <main className="bg-white">
-        {/* Hero Section */}
-        <section className="py-10 px-4 relative min-h-[25vh] flex items-center" style={{backgroundImage: 'url(/homeImages/Screenshot%202026-06-11%20at%203.01.37%20AM.png)', backgroundSize: 'cover', backgroundPosition: 'center'}}>
-          <div className="absolute inset-0 bg-black/45"></div>
-          <div className="max-w-4xl mx-auto text-center w-full relative z-10">
-            <h1 className="text-4xl md:text-5xl font-light text-white mb-2 tracking-tight">
+      <main className="bg-[#F8F6F2]">
+
+        {/* ── PAGE HEADER ── */}
+        <section
+          className="relative flex items-end"
+          style={{
+            minHeight: '38vh',
+            backgroundImage: 'url(/homeImages/Screenshot%202026-06-11%20at%203.01.37%20AM.png)',
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+          }}
+        >
+          <div
+            className="absolute inset-0 pointer-events-none"
+            style={{
+              background: 'linear-gradient(to bottom, rgba(10,10,10,0.10) 0%, rgba(10,10,10,0.20) 40%, rgba(10,10,10,0.75) 100%)',
+            }}
+          />
+          <div className="relative z-10 w-full max-w-screen-xl mx-auto px-6 md:px-14 pb-12 md:pb-14">
+            <p className="text-[10px] tracking-[0.35em] uppercase text-white/50 mb-4" style={{ fontFamily: 'var(--font-geist-mono, monospace)' }}>
+              Portfolio · About
+            </p>
+            <h1 className="font-light text-white tracking-tight leading-[0.9]" style={{ fontSize: 'clamp(2.8rem, 7vw, 6rem)' }}>
               About
             </h1>
-            <p className="text-base text-gray-100 font-light">
-              The story behind the designs
-            </p>
           </div>
         </section>
 
-        {/* Main Content */}
-        <section className="py-24 px-4 bg-white">
-          <div className="max-w-4xl mx-auto">
-            {/* Profile Section */}
-            <div className="border-b-4 border-amber-200 pb-24 mb-24">
-              <div className="flex flex-col md:flex-row gap-12 items-center">
-                <div className="flex-1">
-                  <div className="w-56 h-56 rounded-full object-cover mx-auto md:mx-0 shadow-lg overflow-hidden">
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img 
-                      src="/images/profile.png" 
-                      alt="Suparna Sachan" 
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                </div>
-                <div className="flex-1">
-                  <h2 className="text-4xl font-light text-gray-900 mb-2 tracking-tight">
-                    Suparna Sachan
-                  </h2>
-                  <p className="text-lg text-amber-600 font-light mb-6 tracking-wide">FASHION DESIGNER</p>
-                  <p className="text-gray-600 text-lg leading-relaxed mb-4 font-light">
-                    A driven fashion enthusiast, ceaselessly dedicated to honing craft and acquiring new knowledge, committed to continual self-improvement and skill development within the dynamic realm of fashion.
-                  </p>
-                  <p className="text-gray-600 text-lg leading-relaxed font-light">
-                    Specializing in menswear design and styling with expertise in traditional crafts and contemporary fashion. Passionate about creating innovative designs that blend cultural heritage with modern aesthetics.
-                  </p>
-                </div>
+        <div className="w-full h-[1px] bg-[#D4C9B8]" />
+
+        {/* ── PROFILE ── */}
+        <section className="py-20 md:py-28 px-6 md:px-14 max-w-screen-xl mx-auto">
+          <div className="grid md:grid-cols-12 gap-12 md:gap-16 items-start">
+
+            {/* Photo */}
+            <div className="md:col-span-4">
+              <div className="aspect-[3/4] overflow-hidden bg-[#D4C9B8]">
+                <img
+                  src="/images/profile.png"
+                  alt="Suparna Sachan"
+                  className="w-full h-full object-cover"
+                />
               </div>
             </div>
 
-            {/* Work Experience */}
-            <div className="mb-24">
-              <h3 className="text-3xl font-light text-gray-900 mb-12 text-center tracking-tight">
-                Work Experience
-              </h3>
-              <div className="space-y-6">
-                {[
-                  {
-                    role: 'Menswear Assistant Designer',
-                    company: 'HOUSE OF ALAMS, Delhi NCR',
-                    period: 'January - June 2026',
-                  },
-                  {
-                    role: 'Menswear Assistant Designer',
-                    company: 'NAMUNJII, Ahmedabad, Gujarat',
-                    period: 'August - December 2025',
-                  },
-                  {
-                    role: 'Graduation Project Internship',
-                    company: 'THE INDIAN GARAGE CO, Bangalore, Karnataka',
-                    period: 'January - May 2025',
-                  },
-                  {
-                    role: 'Fashion Designer',
-                    company: 'UNITED COLOR OF BENETTON, Gurgaon, Haryana',
-                    period: 'June - July 2024',
-                  },
-                  {
-                    role: 'Fashion Styling Expert',
-                    company: 'PANTALOONS STYLE-EXPERTS, Bangalore',
-                    period: 'September 2023',
-                  },
-                  {
-                    role: 'Craft Cluster Documentation',
-                    company: 'PERIYAR NEGAMAM CRAFT CLUSTER, Pollachi, Tamil Nadu',
-                    period: 'May 2023',
-                  },
-                  {
-                    role: 'Fashion Stylist',
-                    company: 'RAW MANGO, Festive Collection & SUZEGAD',
-                    period: 'November 2023',
-                  },
-                ].map((exp, i) => (
-                  <div key={i} className="bg-gradient-to-r from-white to-amber-50 border-l-4 border-amber-500 p-6 hover:shadow-lg transition duration-300">
-                    <h4 className="text-lg font-light text-amber-700 mb-1">{exp.role}</h4>
-                    <p className="text-gray-900 font-light mb-2">{exp.company}</p>
-                    <p className="text-sm text-gray-500 font-light">{exp.period}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Resume Download Section */}
-            <div className="mb-24 bg-gradient-to-r from-amber-50 to-orange-50 border-2 border-amber-300 p-12 rounded-lg shadow-md">
-              <h3 className="text-2xl font-light text-gray-900 mb-4 tracking-tight">Download Full Resume</h3>
-              <p className="text-gray-600 font-light mb-8">
-                Get the complete details of my professional background, skills, and achievements.
+            {/* Bio */}
+            <div className="md:col-span-8 flex flex-col justify-center">
+              <p className="text-[10px] tracking-[0.35em] uppercase text-[#8A8278] mb-5" style={{ fontFamily: 'var(--font-geist-mono, monospace)' }}>
+                Designer
               </p>
+              <h2
+                className="font-light text-[#0A0A0A] tracking-tight leading-[0.9] mb-6"
+                style={{ fontSize: 'clamp(2.2rem, 5vw, 4rem)' }}
+              >
+                Suparna<br />
+                <span className="italic">Sachan</span>
+              </h2>
+              <div className="w-12 h-[1px] bg-[#D4C9B8] mb-8" />
+              <p className="text-[#8A8278] font-light text-base leading-relaxed mb-5 max-w-lg">
+                A driven fashion enthusiast, ceaselessly dedicated to honing craft and acquiring new knowledge — committed to continual self-improvement within the dynamic realm of fashion.
+              </p>
+              <p className="text-[#8A8278] font-light text-base leading-relaxed max-w-lg">
+                Specializing in menswear design and styling with expertise in traditional crafts and contemporary fashion. Passionate about creating innovative designs that blend cultural heritage with modern aesthetics.
+              </p>
+
+              {/* Resume download */}
               <a
                 href="pdfs/resume.pdf"
                 download
-                className="inline-block px-8 py-3 bg-amber-600 text-white font-light hover:bg-amber-700 transition duration-200 hover:shadow-lg"
+                className="mt-10 self-start inline-block px-8 py-3 bg-[#0A0A0A] text-white text-xs font-light tracking-widest uppercase hover:bg-[#8A8278] transition-colors duration-300"
               >
-                Download Resume PDF
-              </a>
-            </div>
-
-            {/* Education */}
-            <div className="mb-24">
-              <h3 className="text-3xl font-light text-gray-900 mb-12 text-center tracking-tight">
-                Education
-              </h3>
-              <div className="bg-gradient-to-r from-white to-amber-50 border-l-4 border-amber-500 p-8 hover:shadow-lg transition duration-300">
-                <h4 className="text-xl font-light text-amber-700 mb-2">Bachelor of Design</h4>
-                <p className="text-gray-900 font-light mb-1">National Institute of Fashion Technology, Bangalore</p>
-                <p className="text-sm text-gray-500 font-light mb-6">2021 - 2025</p>
-                
-                <div className="border-t border-amber-200 pt-6 space-y-4">
-                  <div>
-                    <p className="text-sm text-gray-600 font-light mb-1">GPA</p>
-                    <p className="text-lg text-gray-900 font-light">8.45</p>
-                  </div>
-                  <div>
-                    <p className="text-sm text-gray-600 font-light mb-1">Minor</p>
-                    <p className="text-gray-900 font-light">Fashion Communication Design</p>
-                  </div>
-                  <div>
-                    <p className="text-sm text-gray-600 font-light mb-1">Thesis</p>
-                    <p className="text-gray-900 font-light">Studied several technology companies and optimized their product design and user experience</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="mb-24">
-              <h3 className="text-2xl font-light text-gray-900 mb-12 text-center tracking-tight">
-                Expertise
-              </h3>
-              <div className="grid md:grid-cols-2 gap-8">
-                {[
-                  { 
-                    title: 'Specializations', 
-                    items: ['Menswear Design', 'Kidswear', 'Evening Wear', 'Ready-to-Wear', 'Traditional Crafts'] 
-                  },
-                  { 
-                    title: 'Skills', 
-                    items: ['Pattern Making', 'Styling & Consultation', 'Craft Documentation', 'Design Illustration', 'Fashion Coordination'] 
-                  },
-                  { 
-                    title: 'Brands Worked With', 
-                    items: ['Raw Mango', 'Pantaloons', 'Benetton', 'Namunjii', 'House of Alams'] 
-                  },
-                  { 
-                    title: 'Key Areas', 
-                    items: ['Sustainable Fashion', 'Artisan Collaboration', 'Cultural Heritage', 'Contemporary Design', 'Team Leadership'] 
-                  },
-                ].map((section, i) => (
-                  <div key={i} className="bg-white border-t-4 border-amber-500 p-8 hover:shadow-lg transition duration-300 shadow-sm">
-                    <h4 className="text-lg font-light text-gray-900 mb-6 tracking-tight">{section.title}</h4>
-                    <ul className="space-y-3">
-                      {section.items.map((item, j) => (
-                        <li key={j} className="text-gray-700 font-light flex items-center">
-                          <span className="w-2 h-2 bg-amber-500 rounded-full mr-3"></span>
-                          {item}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Brand Values */}
-            <div className="border-t-4 border-amber-200 pt-24 mb-24">
-              <h3 className="text-2xl font-light text-gray-900 mb-12 text-center tracking-tight">
-                Core Values
-              </h3>
-              <div className="grid md:grid-cols-3 gap-8">
-                {[
-                  {
-                    title: 'Quality',
-                    desc: 'Meticulous attention to detail and craftsmanship in every design',
-                  },
-                  {
-                    title: 'Heritage',
-                    desc: 'Honoring traditional crafts and cultural authenticity',
-                  },
-                  {
-                    title: 'Innovation',
-                    desc: 'Blending contemporary design with artisan techniques',
-                  },
-                ].map((value, i) => (
-                  <div key={i} className="text-center p-8 bg-gradient-to-b from-amber-50 to-transparent border-b-4 border-amber-500 hover:shadow-md transition duration-300">
-                    <h4 className="text-lg font-light text-amber-700 mb-3 tracking-tight">{value.title}</h4>
-                    <p className="text-gray-600 font-light">{value.desc}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Call to Action */}
-            <div className="bg-gradient-to-r from-amber-50 to-orange-50 border-2 border-amber-200 p-12 text-center hover:shadow-lg transition duration-300">
-              <h3 className="text-2xl font-light text-gray-900 mb-4 tracking-tight">
-                Let&apos;s Collaborate
-              </h3>
-              <p className="text-gray-600 mb-8 font-light leading-relaxed">
-                Ready to discuss your next project
-              </p>
-              <a
-                href="/contact"
-                className="inline-block px-8 py-3 bg-amber-600 text-white font-light hover:bg-amber-700 transition duration-200 hover:shadow-lg"
-              >
-                Get in Touch
+                Download Resume
               </a>
             </div>
           </div>
+        </section>
+
+        <div className="w-full h-[1px] bg-[#D4C9B8]" />
+
+        {/* ── WORK EXPERIENCE ── */}
+        <section className="py-20 md:py-24 px-6 md:px-14 max-w-screen-xl mx-auto">
+          <p className="text-[10px] tracking-[0.35em] uppercase text-[#8A8278] mb-3" style={{ fontFamily: 'var(--font-geist-mono, monospace)' }}>
+            Experience
+          </p>
+          <h2
+            className="font-light text-[#0A0A0A] tracking-tight mb-14"
+            style={{ fontSize: 'clamp(1.6rem, 3vw, 2.4rem)' }}
+          >
+            Work History
+          </h2>
+
+          {/* Table-style rows */}
+          <div className="divide-y divide-[#D4C9B8]">
+            {experiences.map((exp, i) => (
+              <div
+                key={i}
+                className="group grid grid-cols-12 gap-4 py-6 hover:bg-[#F0EDE8] transition-colors duration-200 -mx-4 px-4"
+              >
+                {/* Index */}
+                <span
+                  className="col-span-1 text-[10px] text-[#8A8278] pt-1"
+                  style={{ fontFamily: 'var(--font-geist-mono, monospace)' }}
+                >
+                  {String(i + 1).padStart(2, '0')}
+                </span>
+
+                {/* Role */}
+                <div className="col-span-11 md:col-span-5">
+                  <p className="text-[#0A0A0A] font-light text-sm md:text-base leading-snug">{exp.role}</p>
+                </div>
+
+                {/* Company */}
+                <div className="col-span-11 md:col-span-4 md:col-start-7 flex flex-col md:flex-row md:items-center md:justify-between gap-1">
+                  <div>
+                    <p className="text-[#0A0A0A] font-light text-sm">{exp.company}</p>
+                    <p className="text-[#8A8278] text-xs font-light">{exp.location}</p>
+                  </div>
+                  <p
+                    className="text-[#8A8278] text-xs whitespace-nowrap"
+                    style={{ fontFamily: 'var(--font-geist-mono, monospace)' }}
+                  >
+                    {exp.period}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <div className="w-full h-[1px] bg-[#D4C9B8]" />
+
+        {/* ── EDUCATION ── */}
+        <section className="py-20 md:py-24 px-6 md:px-14 bg-[#F0EDE8]">
+          <div className="max-w-screen-xl mx-auto grid md:grid-cols-12 gap-12">
+            <div className="md:col-span-4">
+              <p className="text-[10px] tracking-[0.35em] uppercase text-[#8A8278] mb-3" style={{ fontFamily: 'var(--font-geist-mono, monospace)' }}>
+                Education
+              </p>
+              <h2 className="font-light text-[#0A0A0A] tracking-tight" style={{ fontSize: 'clamp(1.6rem, 3vw, 2.4rem)' }}>
+                Academic<br /><span className="italic">Background</span>
+              </h2>
+            </div>
+
+            <div className="md:col-span-8">
+              <div className="border-t border-[#D4C9B8] pt-8">
+                <p className="text-[10px] tracking-[0.25em] uppercase text-[#8A8278] mb-1" style={{ fontFamily: 'var(--font-geist-mono, monospace)' }}>
+                  2021 – 2025
+                </p>
+                <h3 className="text-[#0A0A0A] font-light text-xl mb-1">Bachelor of Design</h3>
+                <p className="text-[#8A8278] font-light mb-8">National Institute of Fashion Technology, Bangalore</p>
+
+                <div className="grid sm:grid-cols-3 gap-8 border-t border-[#D4C9B8] pt-8">
+                  {[
+                    { label: 'GPA', value: '8.45' },
+                    { label: 'Minor', value: 'Fashion Communication Design' },
+                    { label: 'Thesis', value: 'Product design & UX optimization across technology companies' },
+                  ].map((item) => (
+                    <div key={item.label}>
+                      <p className="text-[10px] tracking-[0.2em] uppercase text-[#8A8278] mb-2" style={{ fontFamily: 'var(--font-geist-mono, monospace)' }}>
+                        {item.label}
+                      </p>
+                      <p className="text-[#0A0A0A] font-light text-sm leading-relaxed">{item.value}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <div className="w-full h-[1px] bg-[#D4C9B8]" />
+
+        {/* ── EXPERTISE ── */}
+        <section className="py-20 md:py-24 px-6 md:px-14 max-w-screen-xl mx-auto">
+          <p className="text-[10px] tracking-[0.35em] uppercase text-[#8A8278] mb-3" style={{ fontFamily: 'var(--font-geist-mono, monospace)' }}>
+            Skills
+          </p>
+          <h2 className="font-light text-[#0A0A0A] tracking-tight mb-14" style={{ fontSize: 'clamp(1.6rem, 3vw, 2.4rem)' }}>
+            Expertise
+          </h2>
+
+          <div className="grid md:grid-cols-4 gap-0 divide-y md:divide-y-0 md:divide-x divide-[#D4C9B8]">
+            {expertise.map((section) => (
+              <div key={section.title} className="py-8 md:py-0 md:px-8 first:md:pl-0 last:md:pr-0">
+                <p className="text-[10px] tracking-[0.2em] uppercase text-[#8A8278] mb-6" style={{ fontFamily: 'var(--font-geist-mono, monospace)' }}>
+                  {section.title}
+                </p>
+                <ul className="space-y-3">
+                  {section.items.map((item) => (
+                    <li key={item} className="text-[#0A0A0A] font-light text-sm flex items-start gap-2">
+                      <span className="mt-2 w-1 h-1 shrink-0 bg-[#8A8278] rounded-full" />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <div className="w-full h-[1px] bg-[#D4C9B8]" />
+
+        {/* ── CORE VALUES ── */}
+        <section className="py-20 md:py-24 px-6 md:px-14 bg-[#0A0A0A]">
+          <div className="max-w-screen-xl mx-auto">
+            <p className="text-[10px] tracking-[0.35em] uppercase text-white/30 mb-3" style={{ fontFamily: 'var(--font-geist-mono, monospace)' }}>
+              Philosophy
+            </p>
+            <h2 className="font-light text-white tracking-tight mb-14" style={{ fontSize: 'clamp(1.6rem, 3vw, 2.4rem)' }}>
+              Core Values
+            </h2>
+
+            <div className="grid md:grid-cols-3 gap-0 divide-y md:divide-y-0 md:divide-x divide-white/10">
+              {[
+                { title: 'Quality', desc: 'Meticulous attention to detail and craftsmanship in every design.' },
+                { title: 'Heritage', desc: 'Honoring traditional crafts and cultural authenticity.' },
+                { title: 'Innovation', desc: 'Blending contemporary design with artisan techniques.' },
+              ].map((v) => (
+                <div key={v.title} className="py-10 md:py-0 md:px-10 first:md:pl-0 last:md:pr-0">
+                  <h3 className="text-white font-light text-lg mb-3 tracking-tight italic">{v.title}</h3>
+                  <p className="text-white/40 font-light text-sm leading-relaxed">{v.desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ── CTA ── */}
+        <section className="py-24 px-6 text-center bg-[#F0EDE8]">
+          <p className="text-[10px] tracking-[0.35em] uppercase text-[#8A8278] mb-6" style={{ fontFamily: 'var(--font-geist-mono, monospace)' }}>
+            Get Involved
+          </p>
+          <h2 className="text-[#0A0A0A] font-light tracking-tight mb-8" style={{ fontSize: 'clamp(1.8rem, 4vw, 3.2rem)' }}>
+            Let&apos;s build<br />
+            <span className="italic">something together</span>
+          </h2>
+          <a
+            href="/contact"
+            className="inline-block px-10 py-4 bg-[#0A0A0A] text-white text-xs font-light tracking-widest uppercase hover:bg-[#8A8278] transition-colors duration-300"
+          >
+            Get in Touch
+          </a>
         </section>
       </main>
     </>
